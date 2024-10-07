@@ -1,5 +1,13 @@
+
+import {writeFile} from 'node:fs/promises';
+
 const create = async () => {
-    // Write your code here 
+    const text = 'I am fresh and young';
+    try {
+        await writeFile('files/fresh.txt', text, {flag:'wx'});
+    } catch (e) {
+        console.log("FS operation failed");
+    }
 };
 
 await create();
